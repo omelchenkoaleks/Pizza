@@ -34,4 +34,7 @@
     reputation as one of America`s best being with your friends and family. We believe that good
     food is best enjoyed while staring at our phone.</string>
 
+    <string name="order_name_hint">Please enter your name</string>
+    <string name="order_details_hint">Please enter your order</string>
+
 </resources>
