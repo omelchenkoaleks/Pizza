@@ -1,6 +1,9 @@
 package com.omelchenkoaleks.pizza;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -57,6 +60,35 @@ public class MainActivity extends AppCompatActivity {
 
                 default:
                     return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // добавляем адаптер страничного компонента фрагментов - для того, чтобы ViewPager мог
+    // отображать каждый фрагмент постранично
+    private class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return new TopFragment();
+                case 1:
+                    return new PizzaFragment();
+                case 2:
+                    return new  PastaFragment();
+                case 3:
+                    return new StoresFragment();
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 4;
         }
     }
 }
