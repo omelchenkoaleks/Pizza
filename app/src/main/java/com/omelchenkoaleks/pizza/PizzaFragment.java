@@ -3,6 +3,7 @@ package com.omelchenkoaleks.pizza;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,10 @@ public class PizzaFragment extends Fragment {
         // массивы передаем адаптеру
         CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(pizzaNames, pizzaImage);
         pizzaRecycler.setAdapter(adapter);
+
+        // используем вариант размещения карточек в виде двух столбцов (таблица)
+        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
+        pizzaRecycler.setLayoutManager(layoutManager);
 
         return pizzaRecycler;
     }
