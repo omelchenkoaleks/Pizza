@@ -48,9 +48,10 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
         textView.setText(captions[position]);
     }
 
+    // сообщаем адаптеру количество элементов данных
     @Override
     public int getItemCount() {
-        return 0;
+        return captions.length;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
