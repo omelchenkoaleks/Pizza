@@ -21,7 +21,7 @@
             android:label="@string/create_order"
             android:parentActivityName=".MainActivity"></activity>
         <activity
-            android:name=".PizzaDetailActivityActivity"
+            android:name=".PizzaDetailActivity"
             android:parentActivityName=".MainActivity">
         </activity>
     </application>

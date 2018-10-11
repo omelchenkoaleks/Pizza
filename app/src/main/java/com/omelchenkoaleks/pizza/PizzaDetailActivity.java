@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PizzaDetailActivityActivity extends AppCompatActivity {
+public class PizzaDetailActivity extends AppCompatActivity {
 
     // будем использовать для передачи id d дополнительной информации интента
     public static final String EXTRA_PIZZA_ID = "pizzaId";

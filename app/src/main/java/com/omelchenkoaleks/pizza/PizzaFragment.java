@@ -1,6 +1,7 @@
 package com.omelchenkoaleks.pizza;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -43,6 +44,17 @@ public class PizzaFragment extends Fragment {
         // используем вариант размещения карточек в виде двух столбцов (таблица)
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         pizzaRecycler.setLayoutManager(layoutManager);
+
+        // реализуем слушателя и запускаем активность PizzaDatail.Activity, передавая ей
+        // идентификатор пиццы, выбранной пользователем
+        adapter.setListener(new CaptionedImagesAdapter.Listener() {
+            @Override
+            public void onClick(int position) {
+                Intent intent = new Intent(getActivity(), PizzaDetailActivity.class);
+                intent.putExtra(PizzaDetailActivity.EXTRA_PIZZA_ID, position);
+                getActivity().startActivity(intent);
+            }
+        });
 
         return pizzaRecycler;
     }
